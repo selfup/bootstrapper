@@ -2,6 +2,14 @@
 
 Install go on linux!
 
+### Use
+
+```bash
+curl https://raw.githubusercontent.com/selfup/linux_go/master/main.sh | bash
+```
+
+Or if you cloned this repo: `./main.sh`
+
 ### Steps and Warnings
 
 :warning: Directories will be wiped :warning:
