@@ -2,6 +2,8 @@
 
 Install go on linux!
 
+Currently installs `go1.13.8`
+
 ### Use
 
 ```bash
