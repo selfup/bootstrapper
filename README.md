@@ -2,7 +2,7 @@
 
 Install go on linux!
 
-Currently installs `go1.13.8`
+Currently installs `go1.14.2`
 
 ### Use
 
