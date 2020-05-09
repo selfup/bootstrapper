@@ -12,7 +12,11 @@ fi
 
 if [[ -d /usr/local/go ]]
 then
-    rm -rf /usr/local/go
+    echo 'password might be required because go was found in /usr/local/go'
+    
+    sleep 1s
+    
+    sudo rm -rf /usr/local/go
 fi
 
 GO_DL_VERSION=go1.14.2
