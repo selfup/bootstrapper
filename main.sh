@@ -15,7 +15,7 @@ then
     rm -rf /usr/local/go
 fi
 
-GO_DL_VERSION=go1.13.8
+GO_DL_VERSION=go1.14.2
 
 wget https://dl.google.com/go/$GO_DL_VERSION.linux-amd64.tar.gz
 
