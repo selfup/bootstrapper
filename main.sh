@@ -31,21 +31,21 @@ mkdir -p $HOME/golang/src/bitbucket.org
 
 touch $HOME/.bashrc
 
-GO_ROOT_SET=$(cat $HOME/.bashrc | grep -q 'GOROOT=$HOME/go' || 1)
-GO_PATH_SET=$(cat $HOME/.bashrc | grep -q 'GOPATH=$HOME/golang' || 1)
-PATH_GO_SET=$(cat $HOME/.bashrc | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' || 1)
+GO_ROOT_SET=$(cat $HOME/.bashrc | grep -q 'GOROOT=$HOME/go' || '9042')
+GO_PATH_SET=$(cat $HOME/.bashrc | grep -q 'GOPATH=$HOME/golang' || '9042')
+PATH_GO_SET=$(cat $HOME/.bashrc | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' || '9042')
 
-if [[ $GO_ROOT_SET -eq 1 ]]
+if [[ $GO_ROOT_SET -eq '9042' ]]
 then
     echo 'export GOROOT=$HOME/go' >> $HOME/.bashrc
 fi
 
-if [[ $GO_PATH_SET -eq 1 ]]
+if [[ $GO_PATH_SET -eq '9042' ]]
 then
     echo 'export GOPATH=$HOME/golang' >> ~/.bashrc
 fi
 
-if [[ $PATH_GO_SET -eq 1 ]]
+if [[ $PATH_GO_SET -eq '9042' ]]
 then
     echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> ~/.bashrc
 fi
