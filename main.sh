@@ -21,7 +21,10 @@ fi
 
 GO_DL_VERSION=go1.14.2
 
-wget https://dl.google.com/go/$GO_DL_VERSION.linux-amd64.tar.gz
+if [[ ! -f $GO_DL_VERSION.linux-amd64.tar.gz ]]
+then
+    wget https://dl.google.com/go/$GO_DL_VERSION.linux-amd64.tar.gz
+fi
 
 tar -C $HOME -xzf $GO_DL_VERSION.linux-amd64.tar.gz
 
@@ -31,9 +34,9 @@ mkdir -p $HOME/golang/src/bitbucket.org
 
 touch $HOME/.bashrc
 
-GO_ROOT_SET=$((cat $HOME/.bashrc | grep -q 'GOROOT=$HOME/go') || echo '9042')
-GO_PATH_SET=$((cat $HOME/.bashrc | grep -q 'GOPATH=$HOME/golang') || echo '9042')
-PATH_GO_SET=$((cat $HOME/.bashrc | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin') || echo '9042')
+GO_ROOT_SET=$(cat $HOME/.bashrc | grep -q 'GOROOT=$HOME/go' || echo '9042')
+GO_PATH_SET=$(cat $HOME/.bashrc | grep -q 'GOPATH=$HOME/golang' || echo '9042')
+PATH_GO_SET=$(cat $HOME/.bashrc | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' || echo '9042')
 
 if [[ $GO_ROOT_SET -eq '9042' ]]
 then
@@ -52,6 +55,6 @@ fi
 
 source $HOME/.bashrc
 
-go version
-
 rm $GO_DL_VERSION.linux-amd64.tar.gz
+
+go version
