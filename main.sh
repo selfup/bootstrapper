@@ -19,7 +19,7 @@ then
     sudo rm -rf /usr/local/go
 fi
 
-GO_DL_VERSION=go1.14.2
+GO_DL_VERSION=go1.14.3
 
 if [[ ! -f $GO_DL_VERSION.linux-amd64.tar.gz ]]
 then
