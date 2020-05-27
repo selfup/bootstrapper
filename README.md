@@ -1,8 +1,6 @@
-# Linux Go
+# Bootstrapper
 
-Install go on linux!
-
-Currently installs `go1.14.3`
+Install things on stuff!
 
 ### Use
 
