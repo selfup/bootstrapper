@@ -14,9 +14,10 @@ Or if you cloned this repo: `./linux/golang.sh`
 
 ### Steps and Warnings
 
-Inspect all scripts before running them.
+1. Inspect all scripts before running them
+1. Fully understand what the commands are doing
 
-Fully udnerstand what the commands are doing.
+:warning: Step 2 is important! :warning:
 
 ### LICENSE
 
