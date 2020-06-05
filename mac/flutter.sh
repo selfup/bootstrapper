@@ -5,7 +5,14 @@
 
 set -e
 
-source .versions.env
+if [[ -f .versions.env ]]
+then
+    source .versions.env
+else
+    curl -sSf https://raw.githubusercontent.com/selfup/bootstrapper/master/.versions.env
+    source .versions.env
+    rm .versions.env
+fi
 
 GOOGLE_APIS='https://storage.googleapis.com'
 FLUTTER_OS='flutter_macos_'
