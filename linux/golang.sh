@@ -9,9 +9,7 @@ if [[ -f .versions.env ]]
 then
     source .versions.env
 else
-    curl -sSf https://raw.githubusercontent.com/selfup/bootstrapper/master/.versions.env > .versions.env
-    source .versions.env
-    rm .versions.env
+    $(curl -sSf https://raw.githubusercontent.com/selfup/bootstrapper/master/.versions.env)
 fi
 
 if [[ -d $HOME/go ]]
