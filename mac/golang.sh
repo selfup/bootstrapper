@@ -5,14 +5,7 @@
 
 set -e
 
-if [[ -f .versions.env ]]
-then
-    source .versions.env
-else
-    curl -sSf https://raw.githubusercontent.com/selfup/bootstrapper/master/.versions.env > .versions.env
-    source .versions.env
-    rm .versions.env
-fi
+GO_DL_VERSION='go1.14.4'
 
 if [[ -d $HOME/go ]]
 then
