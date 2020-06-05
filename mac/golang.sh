@@ -5,6 +5,8 @@
 
 set -e
 
+source .versions.env
+
 if [[ -d $HOME/go ]]
 then
     rm -rf $HOME/go
@@ -18,8 +20,6 @@ then
     
     sudo rm -rf /usr/local/go
 fi
-
-GO_DL_VERSION=go1.14.3
 
 if [[ ! -f $GO_DL_VERSION.darwin-amd64.tar.gz ]]
 then

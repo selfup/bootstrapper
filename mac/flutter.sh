@@ -5,10 +5,12 @@
 
 set -e
 
-GOOGLE_APIS=https://storage.googleapis.com
-FLUTTER_VERSION=flutter_macos_1.17.1-stable.zip
-FLUTTER_MAC_OS_RELEASES=$GOOGLE_APIS/flutter_infra/releases/stable/macos
-FLUTTER_DOWNLOAD_URL=$FLUTTER_MAC_OS_RELEASES/$FLUTTER_VERSION
+source .versions.env
+
+GOOGLE_APIS='https://storage.googleapis.com'
+FLUTTER_OS='flutter_macos_'
+FLUTTER_MAC_OS_RELEASES="$GOOGLE_APIS/flutter_infra/releases/stable/macos"
+FLUTTER_DOWNLOAD_URL="${FLUTTER_MAC_OS_RELEASES}/${FLUTTER_OS}${FLUTTER_VERSION}"
 
 wget $FLUTTER_DOWNLOAD_URL -O ~/Downloads/$FLUTTER_VERSION || exit 1
 
