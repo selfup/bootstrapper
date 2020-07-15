@@ -2,6 +2,9 @@
 
 Install things on stuff!
 
+Linux/Mac: Go 1.14.5
+Mac: Flutter 1.17.5-stable
+
 ### Use
 
 Example, install go on linux:
