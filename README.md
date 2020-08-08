@@ -2,8 +2,8 @@
 
 Install things on stuff!
 
-Linux/Mac: Go 1.14.5
-Mac: Flutter 1.17.5-stable
+Linux/Mac: Go 1.14.7
+Mac: Flutter 1.20.1-stable
 
 ### Use
 
