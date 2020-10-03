@@ -5,7 +5,7 @@
 
 set -e
 
-GO_DL_VERSION='go1.14.7'
+GO_DL_VERSION='go1.15.2'
 
 if [[ -d $HOME/go ]]
 then
