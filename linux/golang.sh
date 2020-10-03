@@ -5,7 +5,7 @@
 
 set -e
 
-GO_DL_VERSION='go1.14.7'
+GO_DL_VERSION='go1.15.2'
 
 if [[ -d $HOME/go ]]
 then
@@ -20,8 +20,6 @@ then
     
     sudo rm -rf /usr/local/go
 fi
-
-GO_DL_VERSION=go1.14.4
 
 if [[ ! -f $GO_DL_VERSION.linux-amd64.tar.gz ]]
 then
