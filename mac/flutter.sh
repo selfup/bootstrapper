@@ -5,7 +5,7 @@
 
 set -e
 
-FLUTTER_VERSION='1.22.5-stable.zip'
+FLUTTER_VERSION='1.22.6-stable.zip'
 
 GOOGLE_APIS='https://storage.googleapis.com'
 FLUTTER_OS='flutter_macos_'
