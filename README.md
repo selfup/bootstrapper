@@ -2,7 +2,7 @@
 
 Install things on stuff!
 
-Linux/Mac: Go 1.15.7
+Linux/Mac: Go 1.16
 
 Mac: Flutter 1.22.6-stable
 
