@@ -2,7 +2,7 @@
 
 Install things on stuff!
 
-Linux/Mac: Go 1.16
+Linux/Mac: Go 1.16.1
 
 ### Use
 
