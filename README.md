@@ -6,13 +6,13 @@ Linux/Mac: Go 1.16
 
 ### Use
 
-Example, install go on linux:
+Example install for your current OS (Mac or Linux):
 
 ```bash
-curl https://raw.githubusercontent.com/selfup/bootstrapper/master/linux/golang.sh | bash
+curl https://raw.githubusercontent.com/selfup/bootstrapper/master/scripts/golang.sh | bash
 ```
 
-Or if you cloned this repo: `./linux/golang.sh`
+Or if you cloned this repo: `./scripts/golang.sh`
 
 ### Steps and Warnings
 

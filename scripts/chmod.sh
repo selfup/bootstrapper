@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-chmod +x linux/*.sh
+set -e
 
-chmod +x mac/*.sh
+chmod +x scripts/*.sh

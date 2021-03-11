@@ -7,25 +7,19 @@ set -eo pipefail
 
 GO_DL_VERSION='go1.16'
 
-if [[ $1 == '' ]]
-then
-    echo 'no arg ($1) provided - aborting!'
-    exit 1
-fi
-
 which_shell=''
 
-if [[ $SHELL == '/bin/bash' ]]
+if [[ "$OSTYPE" == "linux-gnu"* ]]
 then
-    if [[ $1 == 'linux' ]]
-    then
-        which_shell='.bashrc'
-    fi
-
-    if [[ $1 == 'mac' ]]
-    then
-        which_shell='.bash_profile'
-    fi
+    which_shell='.bashrc'
+elif [[ "$OSTYPE" == "darwin"* ]]
+then
+    which_shell='.bash_profile'
+else
+    echo 'OS not supported..'
+    echo "current OS is: $OSTYPE"
+    echo 'aborting!'
+    exit 1
 fi
 
 if [[ $SHELL == '/bin/zsh' ]]
@@ -35,7 +29,7 @@ fi
 
 if [[ $which_shell == '' ]]
 then
-    echo 'shell not supported..'
+    echo 'shell or OS not supported..'
     echo "current shell is: $SHELL"
     echo "aborting!"
     exit 1
