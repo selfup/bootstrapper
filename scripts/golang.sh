@@ -12,7 +12,7 @@ if [[ -f $env_file ]]
 then
     source $env_file
 else
-    echo 'not at root of repo.. .env is not found..'
+    echo 'not at root of repo.. ENV file is not found..'
     echo 'aborting'
     exit 1
 fi
