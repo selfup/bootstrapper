@@ -46,7 +46,7 @@ then
     
     sleep 1s
     
-    sudo rm -rf /usr/local/go
+    rm -rf /usr/local/go || sudo rm -rf /usr/local/go
 fi
 
 if [[ ! -f $GO_DL_VERSION.linux-amd64.tar.gz ]]
