@@ -8,11 +8,7 @@ Linux/Mac: Go 1.16
 
 Example install for your current OS (Mac or Linux):
 
-```bash
-curl https://raw.githubusercontent.com/selfup/bootstrapper/master/scripts/golang.sh | bash
-```
-
-Or if you cloned this repo: `./scripts/golang.sh`
+`./scripts/golang.sh`
 
 ### Steps and Warnings
 
