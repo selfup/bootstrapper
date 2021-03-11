@@ -111,10 +111,9 @@ then
 fi
 
 echo "--- sourcing $which_shell ---"
-source $HOME/$which_shell
-
-echo '--- removing tarball ---'
-rm $go_tarball
-
-echo '--- checking go version ---'
-go version
+source $HOME/$which_shell \
+    && echo '--- removing tarball ---' \
+    && rm $go_tarball \
+    && echo '--- checking go version ---' \
+    && go version \
+    && exit 1 | $SHELL
