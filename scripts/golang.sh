@@ -5,9 +5,17 @@
 
 set -eo pipefail
 
-GO_DL_VERSION='go1.16'
-
 which_shell=''
+env_file='.bootstraper.env'
+
+if [[ -f $env_file ]]
+then
+    source $env_file
+else
+    echo 'not at root of repo.. .env is not found..'
+    echo 'aborting'
+    exit 1
+fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]
 then
@@ -22,6 +30,7 @@ else
     exit 1
 fi
 
+# check for zsh after OS check
 if [[ $SHELL == '/bin/zsh' ]]
 then
     which_shell='.zshrc'
