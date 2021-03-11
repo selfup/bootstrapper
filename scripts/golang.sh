@@ -62,21 +62,21 @@ mkdir -p $HOME/golang/src/bitbucket.org
 
 touch $HOME/$which_shell
 
-GO_ROOT_SET=$(cat $HOME/$which_shell | grep -q 'GOROOT=$HOME/go' || echo '9042')
-GO_PATH_SET=$(cat $HOME/$which_shell | grep -q 'GOPATH=$HOME/golang' || echo '9042')
-PATH_GO_SET=$(cat $HOME/$which_shell | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' || echo '9042')
+GO_ROOT_SET=$(cat $HOME/$which_shell | grep -q 'GOROOT=$HOME/go' || echo '404')
+GO_PATH_SET=$(cat $HOME/$which_shell | grep -q 'GOPATH=$HOME/golang' || echo '404')
+PATH_GO_SET=$(cat $HOME/$which_shell | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' || echo '404')
 
-if [[ $GO_ROOT_SET -eq '9042' ]]
+if [[ $GO_ROOT_SET -eq '404' ]]
 then
     echo 'export GOROOT=$HOME/go' >> $HOME/$which_shell
 fi
 
-if [[ $GO_PATH_SET -eq '9042' ]]
+if [[ $GO_PATH_SET -eq '404' ]]
 then
     echo 'export GOPATH=$HOME/golang' >> $HOME/$which_shell
 fi
 
-if [[ $PATH_GO_SET -eq '9042' ]]
+if [[ $PATH_GO_SET -eq '404' ]]
 then
     echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> $HOME/$which_shell
 fi
