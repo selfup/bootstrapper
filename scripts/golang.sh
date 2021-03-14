@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
-# This script is only for Linux or MacOS and amd64 (x86) CPU architectures!
-# Please Read the LICENSE and README in the repo: https://github.com/selfup/linux_go.git
-# If you are reading this because you forked or cloned the repo you know where to find the files
+###########################################################################
+# THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
+# This script is only for Linux/MacOS and amd64 (x86) CPU architectures! ##
+# THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
+###########################################################################
 
 set -eo pipefail
 
