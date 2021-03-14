@@ -7,7 +7,7 @@
 set -eo pipefail
 
 os_type=''
-which_shell=''
+shell_config=''
 env_file='.bootstraper.env'
 
 if [[ -f $env_file ]]
@@ -19,14 +19,39 @@ else
     exit 1
 fi
 
+shell_not_supported() {
+    echo 'shell not supported..'
+    echo "current shell is: $SHELL"
+    echo "aborting!"
+    exit 1
+}
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]
 then
     os_type='linux'
-    which_shell='.bashrc'
+    
+    if [[ $SHELL == '/bin/bash' ]]
+    then
+        shell_config='.bashrc'
+    elif [[ $SHELL == '/bin/zsh' ]]
+    then
+        shell_config='.zshrc'
+    else
+       shell_not_supported
+    fi
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
     os_type='darwin'
-    which_shell='.bash_profile'
+    
+    if [[ $SHELL == '/bin/bash' ]]
+    then
+        shell_config='.bash_profile'
+    elif [[ $SHELL == '/bin/zsh' ]]
+    then
+        shell_config='.zshrc'
+    else
+        shell_not_supported
+    fi
 else
     echo 'OS not supported..'
     echo "current OS is: $OSTYPE"
@@ -34,21 +59,7 @@ else
     exit 1
 fi
 
-# check for zsh after OS check
-if [[ $SHELL == '/bin/zsh' ]]
-then
-    which_shell='.zshrc'
-fi
-
-if [[ $which_shell == '' ]]
-then
-    echo 'shell or OS not supported..'
-    echo "current shell is: $SHELL"
-    echo "aborting!"
-    exit 1
-fi
-
-echo "--- shell config file is: $which_shell ---"
+echo "--- shell config file is: $shell_config ---"
 sleep 1s
 echo "--- OS is: $os_type ---"
 sleep 1s
@@ -85,33 +96,33 @@ mkdir -p $HOME/golang/src/gitlab.com
 mkdir -p $HOME/golang/src/bitbucket.org
 
 echo '--- updating shell metadata ---'
-touch $HOME/$which_shell
+touch $HOME/$shell_config
 
 echo '--- checking for GOROOT - GOPATH - PATH ---'
-GO_ROOT_SET=$(cat $HOME/$which_shell | grep -q 'GOROOT=$HOME/go' || echo '404')
-GO_PATH_SET=$(cat $HOME/$which_shell | grep -q 'GOPATH=$HOME/golang' || echo '404')
-PATH_GO_SET=$(cat $HOME/$which_shell | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' || echo '404')
+GO_ROOT_SET=$(cat $HOME/$shell_config | grep -q 'GOROOT=$HOME/go' || echo '404')
+GO_PATH_SET=$(cat $HOME/$shell_config | grep -q 'GOPATH=$HOME/golang' || echo '404')
+PATH_GO_SET=$(cat $HOME/$shell_config | grep -q 'PATH=$PATH:$GOROOT/bin:$GOPATH/bin' || echo '404')
 
 if [[ $GO_ROOT_SET -eq '404' ]]
 then
     echo '--- setting GOROOT ---'
-    echo 'export GOROOT=$HOME/go' >> $HOME/$which_shell
+    echo 'export GOROOT=$HOME/go' >> $HOME/$shell_config
 fi
 
 if [[ $GO_PATH_SET -eq '404' ]]
 then
     echo '--- setting GOPATH ---'
-    echo 'export GOPATH=$HOME/golang' >> $HOME/$which_shell
+    echo 'export GOPATH=$HOME/golang' >> $HOME/$shell_config
 fi
 
 if [[ $PATH_GO_SET -eq '404' ]]
 then
     echo '--- updating PATH ---'
-    echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> $HOME/$which_shell
+    echo 'export PATH=$PATH:$GOROOT/bin:$GOPATH/bin' >> $HOME/$shell_config
 fi
 
-echo "--- sourcing $which_shell ---"
-source $HOME/$which_shell \
+echo "--- sourcing $shell_config ---"
+source $HOME/$shell_config \
     && echo '--- removing tarball ---' \
     && rm $go_tarball \
     && echo '--- checking go version ---' \
