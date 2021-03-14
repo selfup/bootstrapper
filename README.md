@@ -11,9 +11,11 @@ Linux/Mac: Go 1.16.2
 
 `./scripts/golang.sh`
 
+Windows: Go 1.16.2
+
 :warning: _this will start downloading the .msi_ :warning:
 
-Windows: https://golang.org/doc/install?download=go1.16.2.windows-amd64.msi
+https://golang.org/doc/install?download=go1.16.2.windows-amd64.msi
 
 ### LICENSE
 
