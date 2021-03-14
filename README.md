@@ -2,22 +2,18 @@
 
 Install things on stuff!
 
-Linux/Mac: Go 1.16.2
-
-Windows: https://golang.org/doc/install?download=go1.16.2.windows-amd64.msi
-
-### Use
-
-Example install for your current OS (Mac or Linux):
-
-`./scripts/golang.sh`
-
-### Steps and Warnings
+### :warning: Steps and Warnings :warning:
 
 1. Inspect all scripts before running them
 1. Fully understand what the commands are doing
 
-:warning: Step 2 is important! :warning:
+Linux/Mac: Go 1.16.2
+
+`./scripts/golang.sh`
+
+:warning: _this will start downloading the .msi_ :warning:
+
+Windows: https://golang.org/doc/install?download=go1.16.2.windows-amd64.msi
 
 ### LICENSE
 
