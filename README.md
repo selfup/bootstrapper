@@ -4,6 +4,8 @@ Install things on stuff!
 
 Linux/Mac: Go 1.16.2
 
+Windows: https://golang.org/doc/install?download=go1.16.2.windows-amd64.msi
+
 ### Use
 
 Example install for your current OS (Mac or Linux):
