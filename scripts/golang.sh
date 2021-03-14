@@ -81,7 +81,7 @@ then
     rm -rf /usr/local/go || sudo rm -rf /usr/local/go
 fi
 
-go_tarball=$GO_DL_VERSION.$os_type-amd64.tar.gz
+go_tarball="go$GO_DL_VERSION.$os_type-amd64.tar.gz"
 
 if [[ ! -f $go_tarball ]]
 then
