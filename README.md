@@ -15,7 +15,7 @@ Install things on stuff!
 
 :warning: _this will start downloading the .msi_ :warning:
 
-https://golang.org/doc/install?download=go1.16.2.windows-amd64.msi
+https://golang.org/doc/install?download=go1.16.3.windows-amd64.msi
 
 ### LICENSE
 
