@@ -7,11 +7,11 @@ Install things on stuff!
 1. Inspect all scripts before running them
 1. Fully understand what the commands are doing
 
-#### Linux/Mac: Go 1.16.2
+#### Linux/Mac: Go 1.16.3
 
 `./scripts/golang.sh`
 
-#### Windows: Go 1.16.2
+#### Windows: Go 1.16.3
 
 :warning: _this will start downloading the .msi_ :warning:
 
