@@ -28,6 +28,13 @@ shell_not_supported() {
     exit 1
 }
 
+os_not_supported() {
+    echo 'OS not supported..'
+    echo "current OS is: $OSTYPE"
+    echo 'aborting!'
+    exit 1
+}
+
 rc_finder() {
     if [[ $SHELL == '/bin/bash' ]]
     then
@@ -47,12 +54,11 @@ then
     rc_finder '.bashrc' '.zshrc'
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
+    os_type='darwin'
+
     rc_finder '.bash_profile' '.zshrc'
 else
-    echo 'OS not supported..'
-    echo "current OS is: $OSTYPE"
-    echo 'aborting!'
-    exit 1
+    os_not_supported
 fi
 
 echo "--- shell config file is: $shell_config ---"
