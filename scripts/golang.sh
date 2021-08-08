@@ -28,32 +28,26 @@ shell_not_supported() {
     exit 1
 }
 
+rc_finder() {
+    if [[ $SHELL == '/bin/bash' ]]
+    then
+        shell_config="$1"
+    elif [[ $SHELL == '/bin/zsh' ]]
+    then
+        shell_config="$2"
+    else
+       shell_not_supported
+    fi
+}
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]
 then
     os_type='linux'
     
-    if [[ $SHELL == '/bin/bash' ]]
-    then
-        shell_config='.bashrc'
-    elif [[ $SHELL == '/bin/zsh' ]]
-    then
-        shell_config='.zshrc'
-    else
-       shell_not_supported
-    fi
+    rc_finder '.bashrc' '.zshrc'
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
-    os_type='darwin'
-    
-    if [[ $SHELL == '/bin/bash' ]]
-    then
-        shell_config='.bash_profile'
-    elif [[ $SHELL == '/bin/zsh' ]]
-    then
-        shell_config='.zshrc'
-    else
-        shell_not_supported
-    fi
+    rc_finder '.bash_profile' '.zshrc'
 else
     echo 'OS not supported..'
     echo "current OS is: $OSTYPE"
