@@ -24,6 +24,8 @@ Install things on stuff!
 
 #### Linux/Mac: Go ${GO_DL_VERSION}
 
+_no M1/ARM option yet_
+
 \`./scripts/golang.sh\`
 
 #### Windows: Go ${GO_DL_VERSION}
