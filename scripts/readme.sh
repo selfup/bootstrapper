@@ -17,8 +17,11 @@ echo "# Bootstrapper
 
 Install things on stuff!
 
+Currently support installing Go (golang) on x86_64 platforms.
+
 ### :warning: Steps and Warnings :warning:
 
+1. No Apple M1/ARM support
 1. Inspect all scripts before running them
 1. Fully understand what the commands are doing
 
