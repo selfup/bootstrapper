@@ -2,25 +2,26 @@
 
 Install things on stuff!
 
-Currently supports installing Go (golang) on x86_64 platforms.
+Currently support installing Go (golang) on x86_64 platforms.
 
 ### :warning: Steps and Warnings :warning:
 
+1. If you are not me, you should probably not use this.
+1. It can be destructive!
+1. I repeat, this was written for me
 1. No Apple M1/ARM support
 1. Inspect all scripts before running them
 1. Fully understand what the commands are doing
 
-#### Linux/Mac: Go 1.17.7
-
-_no M1/ARM option yet_
+#### Linux/Mac: Go 1.17.8
 
 `./scripts/golang.sh`
 
-#### Windows: Go 1.17.7
+#### Windows: Go 1.17.8
 
 :warning: _this will start downloading the .msi_ :warning:
 
-https://golang.org/doc/install?download=go1.17.7.windows-amd64.msi
+https://golang.org/doc/install?download=go1.17.8.windows-amd64.msi
 
 ### LICENSE
 

@@ -2,7 +2,6 @@
 
 ###########################################################################
 # THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
-# This script is only for Linux/MacOS and amd64 (x86) CPU architectures! ##
 # THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
 ###########################################################################
 
