@@ -13,15 +13,15 @@ Currently support installing Go (golang) on x86_64 platforms.
 1. Inspect all scripts before running them
 1. Fully understand what the commands are doing
 
-#### Linux/Mac: Go 1.17.8
+#### Linux/Mac: Go 1.18
 
 `./scripts/golang.sh`
 
-#### Windows: Go 1.17.8
+#### Windows: Go 1.18
 
 :warning: _this will start downloading the .msi_ :warning:
 
-https://golang.org/doc/install?download=go1.17.8.windows-amd64.msi
+https://golang.org/doc/install?download=go1.18.windows-amd64.msi
 
 ### LICENSE
 
