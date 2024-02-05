@@ -61,9 +61,9 @@ else
 fi
 
 echo "--- shell config file is: $shell_config ---"
-sleep 1s
+sleep 1
 echo "--- OS is: $os_type ---"
-sleep 1s
+sleep 1
 
 if [[ -d $HOME/go ]]
 then
@@ -75,12 +75,17 @@ if [[ -d /usr/local/go ]]
 then
     echo 'password might be required because go was found in /usr/local/go'
     
-    sleep 1s
+    sleep 1
     
     rm -rf /usr/local/go || sudo rm -rf /usr/local/go
 fi
 
 go_tarball="go$GO_DL_VERSION.$os_type-amd64.tar.gz"
+
+if [[ $(uname -m) == 'arm64' ]]
+then
+    go_tarball="go$GO_DL_VERSION.$os_type-arm64.tar.gz"
+fi
 
 if [[ ! -f $go_tarball ]]
 then
