@@ -68,7 +68,12 @@ sleep 1
 if [[ -d $HOME/go ]]
 then
     echo '--- uninstalling previous go version ---'
-    rm -rf $HOME/go || (echo "need sudo - please delete $HOME/go with sudo before running script" && exit)
+    rm -rf $HOME/go || (
+        echo "need sudo - please delete $HOME/go with sudo before running script" &&
+        echo "PLEASE SAVE YOUR WORK" &&
+        echo "If you are not familiar with GOPATH or GOROOT please ABANDON using this script!" &&
+        exit
+    )
 fi
 
 if [[ -d /usr/local/go ]]
@@ -77,7 +82,12 @@ then
     
     sleep 1
     
-    rm -rf /usr/local/go || (echo "need sudo - please delete $HOME/go with sudo before running script" && exit)
+    rm -rf /usr/local/go || (
+        echo "need sudo - please delete /usr/local/go with sudo before running script" &&
+        echo "PLEASE SAVE YOUR WORK" &&
+        echo "If you are not familiar with GOPATH or GOROOT please ABANDON using this script!" &&
+        exit
+    )
 fi
 
 go_tarball="go$GO_DL_VERSION.$os_type-amd64.tar.gz"
