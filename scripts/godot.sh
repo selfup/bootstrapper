@@ -5,6 +5,8 @@
 # PLEASE AUDIT PRIOR TO RUNNING! ######################## PLEASE AUDIT PRIOR TO RUNNING!#
 #########################################################################################
 
+set -eo pipefail
+
 if [[ $PROJECT_DIR != "" ]]; then
     mkdir -p \
     $PROJECT_DIR/models \
