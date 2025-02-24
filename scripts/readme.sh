@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+#########################################################################################
+# PLEASE AUDIT PRIOR TO RUNNING! ######################## PLEASE AUDIT PRIOR TO RUNNING!#
+# PLEASE AUDIT PRIOR TO RUNNING! ######################## PLEASE AUDIT PRIOR TO RUNNING!#
+#########################################################################################
+
 set -eo pipefail
 
 env_file='.bootstraper.env'
@@ -15,9 +20,13 @@ fi
 
 echo "# Bootstrapper
 
-Install things on stuff!
+Install/Configure/Boilerplate/Bricklay/Bootstrap things on stuff!
 
-Currently support installing Go (golang) on x86_64 platforms.
+Currently supports:
+
+* Installing Go (golang) on x86_64/arm64 Linux/Mac.
+* Installing Rust on Linux/Mac
+* Bootstrapping a Godot project
 
 ### :warning: Steps and Warnings :warning:
 
@@ -27,6 +36,8 @@ Currently support installing Go (golang) on x86_64 platforms.
 1. Inspect all scripts before running them
 1. Fully understand what the commands are doing
 
+## Examples..
+
 #### Linux/Mac: Go ${GO_DL_VERSION}
 
 \`./scripts/golang.sh\`
@@ -35,7 +46,7 @@ Currently support installing Go (golang) on x86_64 platforms.
 
 :warning: _this will start downloading the .msi_ :warning:
 
-https://golang.org/doc/install?download=go${GO_DL_VERSION}.windows-amd64.msi
+https://go.dev/doc/install?download=go${GO_DL_VERSION}.windows-amd64.msi
 
 ### LICENSE
 
