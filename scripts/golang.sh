@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ###########################################################################
+# Deps: grep, curl, tar, uname, $SHELL, $OSTYPE ###########################
 # THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
 # THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
 ###########################################################################
@@ -10,6 +11,12 @@ set -eo pipefail
 os_type=''
 shell_config=''
 env_file='.bootstraper.env'
+overwrite="0"
+
+if [[ $1 == "--force" ]]
+then
+    overwrite="1"
+fi
 
 if [[ -f $env_file ]]
 then
@@ -67,6 +74,20 @@ sleep 1
 
 if [[ -d $HOME/go ]]
 then
+    gv=$(go version)
+
+    echo "--- current installation: $gv ---"
+
+    if [[ $(echo $gv | grep $GO_DL_VERSION) != "" ]]
+    then
+        if [[ $overwrite -eq "0" ]]
+        then
+            echo "--- current go version ${GO_DL_VERSION} already installed and overwrite flag not provided ---"
+            echo "--- exiting ---"
+            exit 0
+        fi
+    fi
+
     echo '--- uninstalling previous go version ---'
     rm -rf $HOME/go || (
         echo "need sudo - please delete $HOME/go with sudo before running script" &&
