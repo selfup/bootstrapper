@@ -19,5 +19,5 @@ if [[ $PROJECT_DIR != "" ]]; then
     $PROJECT_DIR/scripts \
     $PROJECT_DIR/lib
 else
-    echo '>> Please provide $PROJECT_DIR to know which dir to write bootstrap dirs in!'
+    echo '--- Please provide $PROJECT_DIR to know which dir to write bootstrap dirs in!'
 fi

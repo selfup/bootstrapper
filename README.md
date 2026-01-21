@@ -20,7 +20,7 @@ Currently supports:
 
 ## Examples..
 
-#### Linux/Mac: Go 1.25.5
+#### Linux/Mac: Go 1.25.6
 
 Deps: grep, curl, tar, uname, $SHELL, $OSTYPE
 
@@ -43,11 +43,11 @@ bootstrapper (master) $ ./scripts/golang.sh
 --- exiting ---
 ```
 
-#### Windows: Go 1.25.5
+#### Windows: Go 1.25.6
 
 :warning: _this will start downloading the .msi_ :warning:
 
-https://go.dev/doc/install?download=go1.25.5.windows-amd64.msi
+https://go.dev/doc/install?download=go1.25.6.windows-amd64.msi
 
 ### LICENSE
 
