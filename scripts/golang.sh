@@ -8,69 +8,14 @@
 
 set -eo pipefail
 
-os_type=''
-shell_config=''
-env_file='.bootstraper.env'
+source scripts/shell_check.sh
+
 overwrite="0"
 
 if [[ $1 == "--force" ]]
 then
     overwrite="1"
 fi
-
-if [[ -f $env_file ]]
-then
-    source $env_file
-else
-    echo 'not at root of repo.. ENV file is not found..'
-    echo 'aborting'
-    exit 1
-fi
-
-shell_not_supported() {
-    echo 'shell not supported..'
-    echo "current shell is: $SHELL"
-    echo "aborting!"
-    exit 1
-}
-
-os_not_supported() {
-    echo 'OS not supported..'
-    echo "current OS is: $OSTYPE"
-    echo 'aborting!'
-    exit 1
-}
-
-rc_finder() {
-    if [[ $SHELL == '/bin/bash' ]]
-    then
-        shell_config="$1"
-    elif [[ $SHELL == '/bin/zsh' ]]
-    then
-        shell_config="$2"
-    else
-       shell_not_supported
-    fi
-}
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]
-then
-    os_type='linux'
-    
-    rc_finder '.bashrc' '.zshrc'
-elif [[ "$OSTYPE" == "darwin"* ]]
-then
-    os_type='darwin'
-
-    rc_finder '.bash_profile' '.zshrc'
-else
-    os_not_supported
-fi
-
-echo "--- shell config file is: $shell_config"
-sleep 1
-echo "--- OS is: $os_type"
-sleep 1
 
 if [[ -d $HOME/go ]]
 then

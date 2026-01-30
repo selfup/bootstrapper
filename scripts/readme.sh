@@ -7,7 +7,7 @@
 
 set -eo pipefail
 
-env_file='.bootstraper.env'
+env_file='.bootstrapper.env'
 
 if [[ -f $env_file ]]
 then
