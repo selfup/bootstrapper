@@ -10,3 +10,13 @@ set -eo pipefail
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 source $HOME/.cargo/env
+
+echo '--- installing cargo packages'
+
+cargo install \
+    hexyl \
+    ripgrep \
+    bottom \
+    exa
+
+echo '--- cargo packages installed successfully'

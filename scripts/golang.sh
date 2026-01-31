@@ -111,4 +111,7 @@ source $HOME/$shell_config \
     && rm $go_tarball \
     && echo '--- checking go version' \
     && go version \
+    && echo '--- installing go packages' \
+    && go install github.com/selfup/scnnr@latest \
+    && echo '--- go packages installed successfully' \
     && exit 1 | $SHELL

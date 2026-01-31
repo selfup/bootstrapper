@@ -30,6 +30,7 @@ Currently supports:
 * Installing Node LTS via NVM on Linux/Mac
 * Installing pyenv on Linux/Mac
 * Installing Python via pyenv on Linux/Mac
+* Installing common brew dependencies on macOS
 * Bootstrapping a Godot project
 * Running Godot in headless mode to exec a script
 * Adding a convenient tmux config with better pane oriented pane control commands
@@ -54,7 +55,7 @@ Force an overwrite of current version installed in the path this script installs
 
 \`./scripts/golang.sh --force\`
 
-If the flag is not provided then this scripts will exit 0
+If the flag is not provided then this scripts will exit 0. Also installs go packages: scnnr.
 
 Example use:
 
@@ -79,7 +80,7 @@ Deps: curl
 
 \`./scripts/rust.sh\`
 
-Installs Rust via rustup with default settings.
+Installs Rust via rustup with default settings. Also installs cargo packages: hexyl, ripgrep, bottom, exa.
 
 #### Linux/Mac: NVM ${NVM_VERSION}
 
@@ -112,6 +113,14 @@ Deps: pyenv (run \`./scripts/pyenv.sh\` first)
 \`./scripts/python.sh\`
 
 Installs Python ${PYTHON_VERSION} via pyenv and sets it as the global default.
+
+#### macOS: Brew Dependencies
+
+Deps: homebrew
+
+\`./scripts/brew_deps.sh\`
+
+Installs common brew packages: pyenv, asdf, imagemagick, ffmpeg, odin, zig, elixir, gleam, sqlite, htop, wget, curl.
 
 #### Linux/Mac: Godot Project Bootstrap
 
