@@ -28,6 +28,8 @@ Currently supports:
 * Installing Rust on Linux/Mac
 * Installing NVM (Node Version Manager) on Linux/Mac
 * Installing Node LTS via NVM on Linux/Mac
+* Installing pyenv on Linux/Mac
+* Installing Python via pyenv on Linux/Mac
 * Bootstrapping a Godot project
 * Running Godot in headless mode to exec a script
 * Adding a convenient tmux config with better pane oriented pane control commands
@@ -94,6 +96,22 @@ Deps: nvm (run \`./scripts/nvm.sh\` first)
 \`./scripts/node.sh\`
 
 Installs the latest Node LTS version and sets it as the default.
+
+#### Linux/Mac: pyenv
+
+Deps: git, curl, build tools (macOS: xcode-select, homebrew; Linux: build-essential, libssl-dev, etc.)
+
+\`./scripts/pyenv.sh\`
+
+Installs pyenv and configures your shell. Script will prompt you to install any missing dependencies. Restart your shell after running.
+
+#### Linux/Mac: Python ${PYTHON_VERSION}
+
+Deps: pyenv (run \`./scripts/pyenv.sh\` first)
+
+\`./scripts/python.sh\`
+
+Installs Python ${PYTHON_VERSION} via pyenv and sets it as the global default.
 
 #### Linux/Mac: Godot Project Bootstrap
 

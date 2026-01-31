@@ -13,6 +13,16 @@ else
     exit 1
 fi
 
+if ! command -v git &> /dev/null
+then
+    echo '--- git is not installed'
+    echo '--- please install git first'
+    echo '--- macOS: xcode-select --install'
+    echo '--- linux: sudo apt install git (or your package manager)'
+    echo '--- aborting'
+    exit 1
+fi
+
 os_type=''
 shell_config=''
 
