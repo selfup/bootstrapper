@@ -11,6 +11,9 @@ Currently supports:
 * Installing pyenv on Linux/Mac
 * Installing Python via pyenv on Linux/Mac
 * Installing common brew dependencies on macOS
+* Installing common apt dependencies on Linux
+* Installing asdf version manager on Linux/Mac
+* Installing languages via asdf (java, erlang, elixir, zig, odin)
 * Bootstrapping a Godot project
 * Running Godot in headless mode to exec a script
 * Adding a convenient tmux config with better pane oriented pane control commands
@@ -101,6 +104,30 @@ Deps: homebrew
 `./scripts/brew_deps.sh`
 
 Installs common brew packages: pyenv, asdf, imagemagick, ffmpeg, odin, zig, elixir, gleam, sqlite, htop, wget, curl.
+
+#### Linux: Apt Dependencies
+
+Deps: apt
+
+`./scripts/apt_deps.sh`
+
+Checks for common apt packages: build-essential, curl, wget, git, htop, sqlite3, imagemagick, ffmpeg. Prompts you to install any missing packages.
+
+#### Linux/Mac: asdf 0.18.0
+
+Deps: git
+
+`./scripts/asdf.sh`
+
+Installs asdf version manager. Restart your shell after running, then run asdf_plugins.sh.
+
+#### Linux/Mac: asdf Plugins
+
+Deps: asdf (run `./scripts/asdf.sh` first)
+
+`./scripts/asdf_plugins.sh`
+
+Installs plugins and versions from .bootstrapper.env: java (temurin-25.0.2+10.0.LTS), erlang (28.3.1), elixir (1.19.5-otp-28), zig (0.15.2), odin (dev-2026-01).
 
 #### Linux/Mac: Godot Project Bootstrap
 
