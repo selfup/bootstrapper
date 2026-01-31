@@ -24,11 +24,13 @@ Install/Configure/Boilerplate/Bricklay/Bootstrap things on stuff!
 
 Currently supports:
 
-* Installing Go (golang) on x86_64/arm64 Linux/Mac.
+* Installing Go (golang) on x86_64/arm64 Linux/Mac
 * Installing Rust on Linux/Mac
+* Installing NVM (Node Version Manager) on Linux/Mac
+* Installing Node LTS via NVM on Linux/Mac
 * Bootstrapping a Godot project
-- Running Godot in headless mode to exec a script
-- Adding a convenient tmux config with better pane oriented pane control commands
+* Running Godot in headless mode to exec a script
+* Adding a convenient tmux config with better pane oriented pane control commands
 
 ### :warning: Steps and Warnings :warning:
 
@@ -68,6 +70,38 @@ bootstrapper (master) $ ./scripts/golang.sh
 :warning: _this will start downloading the .msi_ :warning:
 
 https://go.dev/doc/install?download=go${GO_DL_VERSION}.windows-amd64.msi
+
+#### Linux/Mac: Rust
+
+Deps: curl
+
+\`./scripts/rust.sh\`
+
+Installs Rust via rustup with default settings.
+
+#### Linux/Mac: NVM ${NVM_VERSION}
+
+Deps: curl, bash
+
+\`./scripts/nvm.sh\`
+
+Installs NVM and configures your shell. Restart your shell after running.
+
+#### Linux/Mac: Node LTS
+
+Deps: nvm (run \`./scripts/nvm.sh\` first)
+
+\`./scripts/node.sh\`
+
+Installs the latest Node LTS version and sets it as the default.
+
+#### Linux/Mac: Godot Project Bootstrap
+
+Deps: \$PROJECT_DIR environment variable
+
+\`PROJECT_DIR=./myproject ./scripts/godot.sh\`
+
+Creates common Godot project directories: models, textures, shaders, sounds, materials, scenes, addons, scripts, lib.
 
 ### LICENSE
 
