@@ -7,7 +7,16 @@
 
 set -eo pipefail
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+if command -v rustup &> /dev/null; then
+    echo '--- rust is already installed'
+    rustc --version
+    echo '--- updating rust to latest stable'
+    rustup update stable
+    echo '--- skipping to cargo force install'
+else
+    echo '--- installing rust via rustup'
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+fi
 
 source $HOME/.cargo/env
 
@@ -17,6 +26,11 @@ cargo install \
     hexyl \
     ripgrep \
     bottom \
-    exa
+    exa \
+    fd-find \
+    bat \
+    jaq \
+    xsv \
+    --force
 
 echo '--- cargo packages installed successfully'

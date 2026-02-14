@@ -25,4 +25,6 @@ nvm alias default 'lts/*'
 
 echo '--- Node LTS installed successfully'
 node --version
-npm --version
+
+echo '--- updating npm'
+npm i -g npm && npm --version
