@@ -50,13 +50,17 @@ Currently supports:
 
 #### Linux/Mac: Go ${GO_DL_VERSION}
 
-Deps: grep, curl, tar, uname, \$SHELL, \$OSTYPE
+Deps: grep, curl, tar, uname, head, \$SHELL, \$OSTYPE
 
 \`./scripts/golang.sh\`
 
 Force an overwrite of current version installed in the path this script installs in:
 
 \`./scripts/golang.sh --force\`
+
+Fetch and install the latest go version from go.dev instead of the pinned \`GO_DL_VERSION\` (can be combined with \`--force\`):
+
+\`./scripts/golang.sh --latest\`
 
 If the flag is not provided then this scripts will exit 0. Also installs go packages: scnnr.
 

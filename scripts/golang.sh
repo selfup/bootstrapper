@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###########################################################################
-# Deps: grep, curl, tar, uname, $SHELL, $OSTYPE ###########################
+# Deps: grep, curl, tar, uname, head, $SHELL, $OSTYPE #####################
 # THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
 # THIS SCRIPT PERFORMS DESTRUCTIVE ACTIONS PLEASE AUDIT PRIOR TO RUNNING ##
 ###########################################################################
@@ -11,10 +11,30 @@ set -eo pipefail
 source scripts/shell_check.sh
 
 overwrite="0"
+use_latest="0"
 
-if [[ $1 == "--force" ]]
+for arg in "$@"
+do
+    case "$arg" in
+        --force)  overwrite="1" ;;
+        --latest) use_latest="1" ;;
+    esac
+done
+
+if [[ $use_latest == "1" ]]
 then
-    overwrite="1"
+    echo '--- fetching latest go version from go.dev'
+    latest_raw=$(curl -fsSL --tls-max 1.3 "https://go.dev/VERSION?m=text" | head -n1)
+    latest_version="${latest_raw#go}"
+
+    if [[ -z "$latest_version" ]]
+    then
+        echo '--- failed to fetch latest go version from go.dev'
+        exit 1
+    fi
+
+    echo "--- latest go version: $latest_version (configured GO_DL_VERSION=$GO_DL_VERSION)"
+    GO_DL_VERSION="$latest_version"
 fi
 
 if [[ -d $HOME/go ]]
