@@ -14,6 +14,7 @@ Currently supports:
 * Installing common apt dependencies on Linux
 * Installing asdf version manager on Linux/Mac
 * Installing languages via asdf (java, erlang, elixir, zig, odin)
+* Installing Godot 4.5-stable on Ubuntu (user-space install, checksum-verified)
 * Bootstrapping a Godot project
 * Running Godot in headless mode to exec a script
 * Adding a convenient tmux config with better pane oriented pane control commands
@@ -133,13 +134,29 @@ Deps: asdf (run `./scripts/asdf.sh` first)
 
 Installs plugins and versions from .bootstrapper.env: java (temurin-25.0.2+10.0.LTS), erlang (28.3.1), elixir (1.19.5-otp-28), zig (0.15.2), odin (dev-2026-01).
 
+#### Ubuntu: Godot 4.5-stable Install
+
+Deps: curl, unzip, sha512sum, grep
+
+`./scripts/install_godot_ubuntu.sh`
+
+Downloads Godot 4.5-stable (standard build), verifies it against the official SHA512-SUMS.txt, and installs it entirely in user space (no sudo): binary to `~/.local/bin/godot`, an icon to `~/.local/share/icons/`, and a `.desktop` launcher to `~/.local/share/applications/`. Run `godot` from a new login shell or launch it from your application menu.
+
 #### Linux/Mac: Godot Project Bootstrap
 
 Deps: $PROJECT_DIR environment variable
 
-`PROJECT_DIR=./myproject ./scripts/godot.sh`
+`PROJECT_DIR=./myproject ./scripts/setup_godot_project.sh`
 
 Creates common Godot project directories: models, textures, shaders, sounds, materials, scenes, addons, scripts, lib.
+
+#### Linux/Mac: Godot Headless Script
+
+Deps: godot (on your PATH)
+
+`./scripts/gdscript.gd`
+
+A minimal headless GDScript run via `godot --headless --script` (the shebang handles the invocation). Extends `SceneTree`, prints `Hello!`, and quits — a template for your own Godot automation/CLI scripts.
 
 ### LICENSE
 

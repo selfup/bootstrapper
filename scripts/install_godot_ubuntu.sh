@@ -1,11 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# install-godot.sh — download, verify, and install Godot 4.5 (standard build) on Ubuntu.
+# install_godot_ubuntu.sh — download, verify, and install Godot (standard build) on Ubuntu.
 # Verifies the download against the official SHA512-SUMS.txt before installing.
 # Installs entirely in user space — no sudo, no root-owned paths.
 
-VERSION="4.5-stable"
+env_file='.bootstrapper.env'
+
+if [[ -f $env_file ]]
+then
+    source $env_file
+else
+    echo 'not at root of repo.. ENV file is not found..'
+    echo 'aborting'
+    exit 1
+fi
+
+VERSION="${GODOT_VERSION}"
 ZIP="Godot_v${VERSION}_linux.x86_64.zip"
 BIN="Godot_v${VERSION}_linux.x86_64"
 BASE="https://github.com/godotengine/godot/releases/download/${VERSION}"
