@@ -14,7 +14,7 @@ Currently supports:
 * Installing common apt dependencies on Linux
 * Installing asdf version manager on Linux/Mac
 * Installing languages via asdf (java, erlang, elixir, zig, odin)
-* Installing Godot 4.5-stable on Ubuntu (user-space install, checksum-verified)
+* Installing Godot 4.6.3-stable on Ubuntu (user-space install, checksum-verified)
 * Bootstrapping a Godot project
 * Running Godot in headless mode to exec a script
 * Adding a convenient tmux config with better pane oriented pane control commands
@@ -70,7 +70,7 @@ Deps: curl
 
 Installs Rust via rustup with default settings. Also installs cargo packages: hexyl, ripgrep, bottom, exa.
 
-#### Linux/Mac: NVM 0.40.1
+#### Linux/Mac: NVM 0.40.4
 
 Deps: curl, bash
 
@@ -94,13 +94,13 @@ Deps: git, curl, build tools (macOS: xcode-select, homebrew; Linux: build-essent
 
 Installs pyenv and configures your shell. Script will prompt you to install any missing dependencies. Restart your shell after running.
 
-#### Linux/Mac: Python 3.14.2
+#### Linux/Mac: Python 3.14.5
 
 Deps: pyenv (run `./scripts/pyenv.sh` first)
 
 `./scripts/python.sh`
 
-Installs Python 3.14.2 via pyenv and sets it as the global default.
+Installs Python 3.14.5 via pyenv and sets it as the global default.
 
 #### macOS: Brew Dependencies
 
@@ -118,7 +118,7 @@ Deps: apt
 
 Checks for common apt packages: build-essential, curl, wget, git, htop, sqlite3, imagemagick, ffmpeg. Prompts you to install any missing packages.
 
-#### Linux/Mac: asdf 0.18.0
+#### Linux/Mac: asdf 0.19.0
 
 Deps: git
 
@@ -132,15 +132,15 @@ Deps: asdf (run `./scripts/asdf.sh` first)
 
 `./scripts/asdf_plugins.sh`
 
-Installs plugins and versions from .bootstrapper.env: java (temurin-25.0.2+10.0.LTS), erlang (28.3.1), elixir (1.19.5-otp-28), zig (0.15.2), odin (dev-2026-01).
+Installs plugins and versions from .bootstrapper.env: java (temurin-25.0.3+9.0.LTS), erlang (29.0.1), elixir (1.20.0-otp-28), zig (0.16.0), odin (dev-2026-05).
 
-#### Ubuntu: Godot 4.5-stable Install
+#### Ubuntu: Godot 4.6.3-stable Install
 
 Deps: curl, unzip, sha512sum, grep
 
 `./scripts/install_godot_ubuntu.sh`
 
-Downloads Godot 4.5-stable (standard build), verifies it against the official SHA512-SUMS.txt, and installs it entirely in user space (no sudo): binary to `~/.local/bin/godot`, an icon to `~/.local/share/icons/`, and a `.desktop` launcher to `~/.local/share/applications/`. Run `godot` from a new login shell or launch it from your application menu.
+Downloads Godot 4.6.3-stable (standard build), verifies it against the official SHA512-SUMS.txt, and installs it entirely in user space (no sudo): binary to `~/.local/bin/godot`, an icon to `~/.local/share/icons/`, and a `.desktop` launcher to `~/.local/share/applications/`. Run `godot` from a new login shell or launch it from your application menu.
 
 #### Linux/Mac: Godot Project Bootstrap
 
