@@ -132,7 +132,7 @@ Deps: asdf (run `./scripts/asdf.sh` first)
 
 `./scripts/asdf_plugins.sh`
 
-Installs plugins and versions from .bootstrapper.env: java (temurin-25.0.3+9.0.LTS), erlang (29.0.1), elixir (1.20.0-otp-28), zig (0.16.0), odin (dev-2026-05).
+Installs plugins and versions from .bootstrapper.env: java (temurin-25.0.4+7.0.LTS), erlang (29.0.5), elixir (1.20.3-otp-29), zig (0.16.0), odin (dev-2026-08).
 
 #### Ubuntu: Godot 4.6.3-stable Install
 

@@ -1,5 +1,5 @@
-java temurin-25.0.2+10.0.LTS
-erlang 28.3.1
-elixir 1.19.5-otp-28
-zig 0.15.2
-odin dev-2026-01
+java temurin-25.0.4+7.0.LTS
+erlang 29.0.5
+elixir 1.20.3-otp-29
+zig 0.16.0
+odin dev-2026-08
