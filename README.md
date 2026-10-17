@@ -29,7 +29,7 @@ Currently supports:
 
 ## Examples..
 
-#### Linux/Mac: Go 1.27.1
+#### Linux/Mac: Go 1.27.2
 
 Deps: grep, curl, tar, uname, head, $SHELL, $OSTYPE
 
@@ -56,11 +56,11 @@ bootstrapper (master) $ ./scripts/golang.sh
 --- exiting ---
 ```
 
-#### Windows: Go 1.27.1
+#### Windows: Go 1.27.2
 
 :warning: _this will start downloading the .msi_ :warning:
 
-https://go.dev/doc/install?download=go1.27.1.windows-amd64.msi
+https://go.dev/doc/install?download=go1.27.2.windows-amd64.msi
 
 #### Linux/Mac: Rust
 
