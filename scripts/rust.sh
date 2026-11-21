@@ -12,7 +12,7 @@ if command -v rustup &> /dev/null; then
     rustc --version
     echo '--- updating rust to latest stable'
     rustup update stable
-    echo '--- skipping to cargo force install'
+    echo '--- skipping to cargo install'
 else
     echo '--- installing rust via rustup'
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -22,7 +22,7 @@ source $HOME/.cargo/env
 
 echo '--- installing cargo packages'
 
-cargo install \
+cargo install --locked --force \
     hexyl \
     ripgrep \
     bottom \
@@ -31,6 +31,6 @@ cargo install \
     bat \
     jaq \
     xsv \
-    --force
+    uv
 
 echo '--- cargo packages installed successfully'

@@ -26,17 +26,9 @@ fi
 echo '--- installing brew dependencies'
 
 brew install \
-    pyenv \
-    asdf \
     imagemagick \
     ffmpeg \
-    odin \
-    zig \
-    elixir \
-    gleam \
-    sqlite \
     htop \
-    wget \
-    curl
+    wget
 
 echo '--- brew dependencies installed successfully'

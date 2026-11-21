@@ -28,12 +28,8 @@ Currently supports:
 * Installing Rust on Linux/Mac
 * Installing NVM (Node Version Manager) on Linux/Mac
 * Installing Node LTS via NVM on Linux/Mac
-* Installing pyenv on Linux/Mac
-* Installing Python via pyenv on Linux/Mac
 * Installing common brew dependencies on macOS
 * Installing common apt dependencies on Linux
-* Installing asdf version manager on Linux/Mac
-* Installing languages via asdf (java, erlang, elixir, zig, odin)
 * Installing Godot ${GODOT_VERSION} on Ubuntu (user-space install, checksum-verified)
 * Bootstrapping a Godot project
 * Running Godot in headless mode to exec a script
@@ -88,7 +84,7 @@ Deps: curl
 
 \`./scripts/rust.sh\`
 
-Installs Rust via rustup with default settings. Also installs cargo packages: hexyl, ripgrep, bottom, exa.
+Installs Rust via rustup with default settings. Also installs cargo packages: hexyl, ripgrep, bottom, exa, fd-find, bat, jaq, xsv, uv.
 
 #### Linux/Mac: NVM ${NVM_VERSION}
 
@@ -106,29 +102,13 @@ Deps: nvm (run \`./scripts/nvm.sh\` first)
 
 Installs the latest Node LTS version and sets it as the default.
 
-#### Linux/Mac: pyenv
-
-Deps: git, curl, build tools (macOS: xcode-select, homebrew; Linux: build-essential, libssl-dev, etc.)
-
-\`./scripts/pyenv.sh\`
-
-Installs pyenv and configures your shell. Script will prompt you to install any missing dependencies. Restart your shell after running.
-
-#### Linux/Mac: Python ${PYTHON_VERSION}
-
-Deps: pyenv (run \`./scripts/pyenv.sh\` first)
-
-\`./scripts/python.sh\`
-
-Installs Python ${PYTHON_VERSION} via pyenv and sets it as the global default.
-
 #### macOS: Brew Dependencies
 
 Deps: homebrew
 
 \`./scripts/brew_deps.sh\`
 
-Installs common brew packages: pyenv, asdf, imagemagick, ffmpeg, odin, zig, elixir, gleam, sqlite, htop, wget, curl.
+Installs common brew packages: imagemagick, ffmpeg, htop, wget.
 
 #### Linux: Apt Dependencies
 
@@ -137,22 +117,6 @@ Deps: apt
 \`./scripts/apt_deps.sh\`
 
 Checks for common apt packages: build-essential, curl, wget, git, htop, sqlite3, imagemagick, ffmpeg. Prompts you to install any missing packages.
-
-#### Linux/Mac: asdf ${ASDF_VERSION}
-
-Deps: git
-
-\`./scripts/asdf.sh\`
-
-Installs asdf version manager. Restart your shell after running, then run asdf_plugins.sh.
-
-#### Linux/Mac: asdf Plugins
-
-Deps: asdf (run \`./scripts/asdf.sh\` first)
-
-\`./scripts/asdf_plugins.sh\`
-
-Installs plugins and versions from .bootstrapper.env: java (${JAVA_VERSION}), erlang (${ERLANG_VERSION}), elixir (${ELIXIR_VERSION}), zig (${ZIG_VERSION}), odin (${ODIN_VERSION}).
 
 #### Ubuntu: Godot ${GODOT_VERSION} Install
 
