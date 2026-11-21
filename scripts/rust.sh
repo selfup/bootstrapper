@@ -26,7 +26,7 @@ cargo install --locked --force \
     hexyl \
     ripgrep \
     bottom \
-    exa \
+    eza \
     fd-find \
     bat \
     jaq \

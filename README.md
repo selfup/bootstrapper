@@ -64,7 +64,7 @@ Deps: curl
 
 `./scripts/rust.sh`
 
-Installs Rust via rustup with default settings. Also installs cargo packages: hexyl, ripgrep, bottom, exa, fd-find, bat, jaq, xsv, uv.
+Installs Rust via rustup with default settings. Also installs cargo packages: hexyl, ripgrep, bottom, eza, fd-find, bat, jaq, xsv, uv.
 
 #### Linux/Mac: NVM 0.40.4
 
